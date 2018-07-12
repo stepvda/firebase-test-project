@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <!-- setup libraries -->
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
+    <link rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
+   
+   <script type="text/javascript">
+    // FirebaseUI config.
+    var uiConfig = {
+      signInSuccessUrl: "http://extremeplanning.stepvda.net",
+      signInOptions: [{
+        provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        scopes: config.scopes
+      }],
+      // Terms of service url.
+      tosUrl: “http://www.google.com”
+    };
+    
+    // Initialize the FirebaseUI Widget using Firebase.
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    // The start method will wait until the DOM is loaded.
+    ui.start('#firebaseui-auth-container', uiConfig);
+  </script>
+  
+  </head>
+  <body>
+   
+    <h1>Welcome to My Awesome App</h1>
+    <div id="firebaseui-auth-container"></div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyA4S9jMbjNBMDRT1ZN-44BEL40dfx7RcNs",
+        authDomain: "fir-test-project-711bd.firebaseapp.com",
+        databaseURL: "https://fir-test-project-711bd.firebaseio.com",
+        projectId: "fir-test-project-711bd",
+        storageBucket: "fir-test-project-711bd.appspot.com",
+        messagingSenderId: "738652423036",
+        //added clientId
+        clientId: "35954265654-b5oir35fkupkllr80o1kh1nh0uo8llk8.apps.googleusercontent.com"
+        //added scopes for G Suite
+        scopes: [
+          "email",
+          "profile",
+          "https://www.googleapis.com/auth/calendar"
+        ]
+        //added discovery docs so that the Google API knows which libraries to load
+        discoveryDocs: [
+          "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"
+        ]
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+  
+  </body>
+</html>
